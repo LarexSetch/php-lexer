@@ -1,0 +1,79 @@
+@startuml
+
+(phpTagOpen) as pto
+(phpTokens) as pts
+(phpToken) as ptn
+
+(phpNamespace) as pn
+(statement) as pns
+
+(phpUseList) as pul
+(phpUse) as pue
+(statement) as pues
+
+(phpClass) as pc
+(modifierList) as pcml
+(modifier) as pcm
+(implementList) as pcil
+(implement) as pci
+(statement) as pcis
+(extends) as pce
+(statement) as pces
+
+(propertyList) as pcpl
+(property) as pcp
+(type) as pcpt
+(modifierList) as pcpml
+(modifier) as pcpm
+pcpl --> pcp
+pcp --> pcpt
+pcp --> pcpml
+pcpml --> pcpm
+
+(constantList) as pccl
+(constant) as pcc
+pccl --> pcc
+
+(functionList) as pcfl
+(function) as pcf
+(modifierList) as pcfml
+(modifier) as pcfm
+(return) as pcfr
+(argumentList) as pcfal
+(argument) as pcfa
+(type) as pcfat
+pcfl --> pcf
+pcf --> pcfr
+pcf --> pcfml
+pcfml --> pcfm
+pcf --> pcfal
+pcfal --> pcfa
+pcfal --> pcfat
+
+
+pto --> pts
+pts --> ptn
+ptn --> pul
+pul --> pue
+pue --> pues
+
+ptn --> pn
+pn --> pns
+
+ptn --> pc
+pc --> pcml
+pcml --> pcm
+pc --> pcil
+pcil --> pci
+pci --> pcis
+
+pc --> pce
+pce --> pces
+
+pc --> pcpl
+pc --> pccl
+pc --> pcfl
+
+
+
+@enduml
